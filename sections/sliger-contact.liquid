@@ -1,0 +1,90 @@
+{% liquid
+  assign whatsapp_link = section.settings.whatsapp_link
+  if whatsapp_link == blank
+    assign whatsapp_link = 'https://wa.me/?text=Hi%20SLIGER%2C%20I%20want%20help%20choosing%20a%20skincare%20product.'
+  endif
+%}
+
+<div class="sliger-page">
+  <section class="sliger-page-heading">
+    <div class="sliger-page-heading__media" aria-hidden="true">
+      <img src="{{ 'sliger-cetaphil-water.jpg' | asset_url }}" alt="" width="736" height="1104" loading="eager">
+    </div>
+    <div class="sliger-shell">
+      <p class="sliger-eyebrow">Contact Us</p>
+      <h1>Ask SLIGER about skincare picks, affiliate links, or future products.</h1>
+      <p>
+        Send a quick inquiry to Pratik Bhangale and the SLIGER brand. We can help with
+        product suggestions, content updates, and collaboration requests.
+      </p>
+    </div>
+  </section>
+
+  <section class="sliger-section">
+    <div class="sliger-shell sliger-grid-2">
+      <div class="sliger-card">
+        {% form 'contact', class: 'sliger-contact-form' %}
+          {% if form.posted_successfully? %}
+            <div class="sliger-form-message sliger-form-message--success" tabindex="-1">
+              Thanks. Your inquiry was sent successfully.
+            </div>
+          {% endif %}
+
+          {% if form.errors %}
+            <div class="sliger-form-message sliger-form-message--error" tabindex="-1">
+              {{ form.errors | default_errors }}
+            </div>
+          {% endif %}
+
+          <div class="sliger-field-grid">
+            <div class="sliger-field">
+              <label for="ContactForm-name">Name</label>
+              <input id="ContactForm-name" name="contact[name]" type="text" autocomplete="name" required>
+            </div>
+            <div class="sliger-field">
+              <label for="ContactForm-email">Email</label>
+              <input id="ContactForm-email" name="contact[email]" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="sliger-field">
+            <label for="ContactForm-message">Message</label>
+            <textarea id="ContactForm-message" name="contact[body]" required placeholder="Tell us what skincare product you want help with."></textarea>
+          </div>
+          <button class="sliger-button" type="submit">Send inquiry</button>
+        {% endform %}
+      </div>
+
+      <aside class="sliger-card sliger-value">
+        <p class="sliger-eyebrow">Quick contact</p>
+        <h2 class="sliger-title">Need a faster skincare answer?</h2>
+        <p>
+          Ask about SLIGER product picks, future skincare categories, or affiliate collaborations.
+          Purchases still happen on Amazon.
+        </p>
+        <div class="sliger-hero__actions">
+          <a class="sliger-button" href="mailto:contact@sliger.in">Email SLIGER</a>
+          <a class="sliger-button-secondary" href="{{ whatsapp_link }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+        <p class="sliger-copy">As an Amazon Associate, we earn from qualifying purchases.</p>
+      </aside>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "SLIGER contact",
+  "settings": [
+    {
+      "type": "url",
+      "id": "whatsapp_link",
+      "label": "WhatsApp link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SLIGER contact"
+    }
+  ]
+}
+{% endschema %}

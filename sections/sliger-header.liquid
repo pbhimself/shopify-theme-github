@@ -1,0 +1,59 @@
+{% liquid
+  assign buy_link = section.settings.buy_link
+  if buy_link == blank
+    assign buy_link = 'https://amzn.to/3PWsBtd'
+  endif
+%}
+
+<header class="sliger-header" data-sliger-header data-sliger-menu="closed">
+  <div class="sliger-shell sliger-header__inner">
+    <a class="sliger-brand" href="{{ routes.root_url }}" aria-label="SLIGER home">
+      <span class="sliger-brand__mark">S</span>
+      <span class="sliger-brand__name">SLIGER</span>
+    </a>
+
+    <nav class="sliger-nav" aria-label="Primary navigation">
+      <a href="{{ routes.root_url }}#shop">Products</a>
+      <a href="{{ routes.root_url }}#benefits">Benefits</a>
+      <a href="/pages/about">About</a>
+      <a href="/pages/contact">Contact</a>
+      <a href="/pages/privacy-policy">Privacy</a>
+    </nav>
+
+    <div class="sliger-header__actions">
+      <a class="sliger-button" href="{{ buy_link }}" target="_blank" rel="sponsored noopener noreferrer">
+        Buy Now
+      </a>
+      <button
+        class="sliger-menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        data-sliger-menu-toggle
+      >
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "SLIGER header",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "url",
+      "id": "buy_link",
+      "label": "Featured buy link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SLIGER header"
+    }
+  ]
+}
+{% endschema %}

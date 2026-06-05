@@ -1,0 +1,81 @@
+{% liquid
+  assign buy_link = section.settings.buy_link
+  if buy_link == blank
+    assign buy_link = 'https://amzn.to/3PWsBtd'
+  endif
+
+  assign whatsapp_link = section.settings.whatsapp_link
+  if whatsapp_link == blank
+    assign whatsapp_link = 'https://wa.me/?text=Hi%20SLIGER%2C%20I%20want%20help%20choosing%20a%20skincare%20product.'
+  endif
+%}
+
+<footer class="sliger-footer">
+  <div class="sliger-shell sliger-footer__inner">
+    <div>
+      <a class="sliger-brand" href="{{ routes.root_url }}" aria-label="SLIGER home">
+        <span class="sliger-brand__mark">S</span>
+        <span class="sliger-brand__name">SLIGER</span>
+      </a>
+      <p>
+        Premium skincare picks curated by Pratik Bhangale for clean, simple daily routines
+        across men and women.
+      </p>
+      <p><strong>As an Amazon Associate, we earn from qualifying purchases.</strong></p>
+    </div>
+
+    <div>
+      <h2>Explore</h2>
+      <ul>
+        <li><a href="{{ routes.root_url }}#shop">Products</a></li>
+        <li><a href="{{ routes.root_url }}#benefits">Benefits</a></li>
+        <li><a href="/pages/about">About Us</a></li>
+        <li><a href="/pages/contact">Contact Us</a></li>
+        <li><a href="/pages/privacy-policy">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Amazon purchase</h2>
+      <p>
+        SLIGER has no cart, checkout, payment gateway, or order handling.
+        Product buttons open Amazon through affiliate links.
+      </p>
+      <a class="sliger-button-secondary" href="{{ buy_link }}" target="_blank" rel="sponsored noopener noreferrer">
+        Shop featured cleanser
+      </a>
+    </div>
+  </div>
+  <div class="sliger-shell sliger-footer__bottom">
+    Copyright {{ 'now' | date: '%Y' }} SLIGER. Curated by Pratik Bhangale.
+  </div>
+  <a class="sliger-whatsapp" href="{{ whatsapp_link }}" target="_blank" rel="noopener noreferrer" aria-label="Contact SLIGER on WhatsApp">
+    WA
+  </a>
+</footer>
+
+{% schema %}
+{
+  "name": "SLIGER footer",
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "settings": [
+    {
+      "type": "url",
+      "id": "buy_link",
+      "label": "Featured buy link"
+    },
+    {
+      "type": "url",
+      "id": "whatsapp_link",
+      "label": "WhatsApp link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SLIGER footer"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,349 @@
+{% liquid
+  assign cetaphil_link = section.settings.cetaphil_link
+  if cetaphil_link == blank
+    assign cetaphil_link = 'https://amzn.to/3PWsBtd'
+  endif
+
+  assign simple_link = section.settings.simple_link
+  if simple_link == blank
+    assign simple_link = 'https://amzn.to/4g273pq'
+  endif
+
+  assign glad_link = section.settings.glad_link
+  if glad_link == blank
+    assign glad_link = 'https://amzn.to/4ufdZD2'
+  endif
+%}
+
+<div class="sliger-page">
+  <section class="sliger-hero">
+    <div class="sliger-hero__media" aria-hidden="true">
+      <img src="{{ 'sliger-cetaphil-water.jpg' | asset_url }}" alt="" width="736" height="1104" loading="eager">
+    </div>
+    <div class="sliger-hero__fade" aria-hidden="true"></div>
+
+    <div class="sliger-shell sliger-hero__inner">
+      <div class="sliger-hero__copy">
+        <span class="sliger-hero__badge">SLIGER skincare edit</span>
+        <h1>
+          SLIGER
+          <span>Clean Skin. Every Day.</span>
+        </h1>
+        <p>
+          Premium skincare picks for men and women, curated by Pratik Bhangale.
+          Start with Cetaphil Daily Facial Cleanser, then shop directly on Amazon.
+        </p>
+        <div class="sliger-hero__actions">
+          <a class="sliger-button" href="{{ cetaphil_link }}" target="_blank" rel="sponsored noopener noreferrer">
+            Shop Cetaphil
+          </a>
+          <a class="sliger-button-secondary" href="#shop">View products</a>
+        </div>
+        <span class="sliger-hero__notice">As an Amazon Associate, we earn from qualifying purchases.</span>
+      </div>
+      <div class="sliger-hero__product" aria-hidden="true">
+        <img src="{{ 'sliger-cetaphil-cutout.png' | asset_url }}" alt="" width="438" height="570" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <section id="shop" class="sliger-featured">
+    <div class="sliger-shell">
+      <div class="sliger-card sliger-grid-2">
+        <div class="sliger-featured__media">
+          <img src="{{ 'sliger-cetaphil-cutout.png' | asset_url }}" alt="Cetaphil Daily Facial Cleanser bottle" width="438" height="570" loading="eager">
+        </div>
+        <div class="sliger-featured__content">
+          <p class="sliger-eyebrow">Featured product</p>
+          <h2 class="sliger-title">Cetaphil Daily Facial Cleanser</h2>
+          <p class="sliger-copy">
+            A premium everyday cleanser pick for normal to oily skin. SLIGER recommends it
+            for shoppers who want a simple, gentle, low-noise routine.
+          </p>
+
+          <div class="sliger-benefit-list">
+            <div class="sliger-benefit">
+              <span class="sliger-benefit__icon">1</span>
+              <span><strong>Fragrance-Free</strong><span>A calmer daily cleanse with no heavy scent.</span></span>
+            </div>
+            <div class="sliger-benefit">
+              <span class="sliger-benefit__icon">2</span>
+              <span><strong>Dermatologist Recommended</strong><span>Selected for a gentle, skin-conscious routine.</span></span>
+            </div>
+            <div class="sliger-benefit">
+              <span class="sliger-benefit__icon">3</span>
+              <span><strong>Sensitive Skin Friendly</strong><span>Designed for a soft cleanse that respects comfort.</span></span>
+            </div>
+            <div class="sliger-benefit">
+              <span class="sliger-benefit__icon">4</span>
+              <span><strong>Removes Dirt & Oil</strong><span>Helps wash away daily buildup without a harsh feel.</span></span>
+            </div>
+          </div>
+
+          <div class="sliger-hero__actions">
+            <a class="sliger-button" href="{{ cetaphil_link }}" target="_blank" rel="sponsored noopener noreferrer">
+              Buy Now on Amazon
+            </a>
+            <a class="sliger-button-secondary" href="#faq">Read FAQs</a>
+          </div>
+          <p class="sliger-copy">No cart, checkout, or payment gateway. The button opens Amazon in a new tab.</p>
+        </div>
+      </div>
+
+      <div class="sliger-product-toolbar" data-sliger-filter-group>
+        <button class="sliger-filter is-active" type="button" data-sliger-filter="all" aria-pressed="true">All</button>
+        <button class="sliger-filter" type="button" data-sliger-filter="cleanser" aria-pressed="false">Cleansers</button>
+        <button class="sliger-filter" type="button" data-sliger-filter="sensitive" aria-pressed="false">Sensitive skin</button>
+        <button class="sliger-filter" type="button" data-sliger-filter="micellar" aria-pressed="false">Micellar</button>
+      </div>
+
+      <div class="sliger-products">
+        <article class="sliger-card sliger-product" data-sliger-product="cleanser sensitive">
+          <div class="sliger-product__image sliger-product__image--contain">
+            <img src="{{ 'sliger-cetaphil-cutout.png' | asset_url }}" alt="Cetaphil Daily Facial Cleanser" width="438" height="570" loading="lazy">
+          </div>
+          <div class="sliger-product__body">
+            <span class="sliger-pill">Featured pick</span>
+            <h3>Cetaphil Daily Facial Cleanser</h3>
+            <p>A gentle everyday face cleanser for normal to oily skin.</p>
+            <div class="sliger-tags">
+              <span>Fragrance-Free</span>
+              <span>Daily Use</span>
+              <span>Sensitive Skin</span>
+            </div>
+            <div class="sliger-product__actions">
+              <a class="sliger-button" href="{{ cetaphil_link }}" target="_blank" rel="sponsored noopener noreferrer">Buy Now</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="sliger-card sliger-product" data-sliger-product="cleanser">
+          <div class="sliger-product__image">
+            <img src="{{ 'sliger-simple-oily.jpg' | asset_url }}" alt="Simple refreshing facial wash product layout" width="736" height="736" loading="lazy">
+          </div>
+          <div class="sliger-product__body">
+            <span class="sliger-pill">Fresh cleanse</span>
+            <h3>Simple Refreshing Facial Wash</h3>
+            <p>A lightweight refreshing facial wash for a clean-feeling morning or evening cleanse.</p>
+            <div class="sliger-tags">
+              <span>Kind to skin</span>
+              <span>Fresh feel</span>
+              <span>Daily routine</span>
+            </div>
+            <div class="sliger-product__actions">
+              <a class="sliger-button" href="{{ simple_link }}" target="_blank" rel="sponsored noopener noreferrer">Buy Now</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="sliger-card sliger-product" data-sliger-product="micellar sensitive">
+          <div class="sliger-product__image">
+            <img src="{{ 'sliger-gladtoglow.jpg' | asset_url }}" alt="Glad2Glow pink micellar water bottle" width="736" height="1104" loading="lazy">
+          </div>
+          <div class="sliger-product__body">
+            <span class="sliger-pill">Soft remove</span>
+            <h3>Glad2Glow Micellar Water</h3>
+            <p>A soft pink micellar water edit for light makeup removal and gentle daily freshness.</p>
+            <div class="sliger-tags">
+              <span>Hydrating feel</span>
+              <span>Light cleanse</span>
+              <span>Glow routine</span>
+            </div>
+            <div class="sliger-product__actions">
+              <a class="sliger-button" href="{{ glad_link }}" target="_blank" rel="sponsored noopener noreferrer">Buy Now</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="benefits" class="sliger-section sliger-soft-band">
+    <div class="sliger-shell">
+      <p class="sliger-eyebrow">Benefits</p>
+      <h2 class="sliger-title">Built for clean decisions and repeatable routines.</h2>
+      <p class="sliger-copy">
+        SLIGER blends a premium editorial feel with simple affiliate shopping, so visitors can
+        scan benefits and move straight to the right product.
+      </p>
+
+      <div class="sliger-grid-4" style="margin-top: 34px;">
+        <article class="sliger-card sliger-value">
+          <span class="sliger-value__icon">A</span>
+          <h3>Simple routine fit</h3>
+          <p>A cleanser should feel easy to repeat. Cetaphil keeps the routine clean and direct.</p>
+        </article>
+        <article class="sliger-card sliger-value">
+          <span class="sliger-value__icon">B</span>
+          <h3>Everyday skin balance</h3>
+          <p>Made for normal to oily skin needs, with a gentle profile for men and women.</p>
+        </article>
+        <article class="sliger-card sliger-value">
+          <span class="sliger-value__icon">C</span>
+          <h3>Fast product clarity</h3>
+          <p>Images, benefits, and call-to-action buttons are kept visible and easy to compare.</p>
+        </article>
+        <article class="sliger-card sliger-value">
+          <span class="sliger-value__icon">D</span>
+          <h3>Amazon checkout</h3>
+          <p>Every active purchase button opens Amazon. SLIGER does not store payment details.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sliger-section">
+    <div class="sliger-shell">
+      <div class="sliger-grid-2">
+        <div>
+          <p class="sliger-eyebrow">Pinterest-friendly skincare</p>
+          <h2 class="sliger-title">Tall, saveable product moments.</h2>
+          <p class="sliger-copy">
+            Your supplied visuals are arranged as editorial product moments for sharing,
+            scanning, and brand polish.
+          </p>
+        </div>
+        <div class="sliger-card">
+          <div class="sliger-product__image">
+            <img src="{{ 'sliger-clean-skin-poster.png' | asset_url }}" alt="Clean Skin Every Day Cetaphil poster" width="1024" height="1536" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="sliger-masonry">
+        <article class="sliger-card sliger-pin">
+          <div class="sliger-pin__image">
+            <img src="{{ 'sliger-cetaphil-editorial.jpg' | asset_url }}" alt="Cetaphil cleanser with skincare benefit poster" width="736" height="1333" loading="lazy">
+          </div>
+          <div class="sliger-pin__body"><strong>Clean skin poster</strong><span>SLIGER</span></div>
+        </article>
+        <article class="sliger-card sliger-pin">
+          <div class="sliger-pin__image">
+            <img src="{{ 'sliger-cetaphil-water.jpg' | asset_url }}" alt="Cetaphil cleanser splashing in water" width="736" height="1104" loading="lazy">
+          </div>
+          <div class="sliger-pin__body"><strong>Blue cleanser ritual</strong><span>Daily</span></div>
+        </article>
+        <article class="sliger-card sliger-pin">
+          <div class="sliger-pin__image">
+            <img src="{{ 'sliger-gladtoglow.jpg' | asset_url }}" alt="Glad2Glow micellar water on pink marble" width="736" height="1104" loading="lazy">
+          </div>
+          <div class="sliger-pin__body"><strong>Gentle pink micellar edit</strong><span>Glow</span></div>
+        </article>
+        <article class="sliger-card sliger-pin">
+          <div class="sliger-pin__image">
+            <img src="{{ 'sliger-simple-oily.jpg' | asset_url }}" alt="Simple facial wash with cucumber and mint" width="736" height="736" loading="lazy">
+          </div>
+          <div class="sliger-pin__body"><strong>Fresh green face wash</strong><span>Clean</span></div>
+        </article>
+        <article class="sliger-card sliger-pin">
+          <div class="sliger-pin__image">
+            <img src="{{ 'sliger-blue-cleanser-foam.jpg' | asset_url }}" alt="Blue foaming cleanser in water bubbles" width="736" height="1104" loading="lazy">
+          </div>
+          <div class="sliger-pin__body"><strong>Oil-control cleanse mood</strong><span>Fresh</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sliger-section sliger-soft-band">
+    <div class="sliger-shell">
+      <p class="sliger-eyebrow sliger-title--center">Customer testimonials</p>
+      <h2 class="sliger-title sliger-title--center">Clear, confident shopping for skincare routines.</h2>
+      <p class="sliger-copy sliger-copy--center">
+        Early SLIGER-style feedback focuses on fast decisions, premium visuals, and product clarity.
+      </p>
+
+      <div class="sliger-grid-3" style="margin-top: 34px;">
+        <article class="sliger-card sliger-testimonial">
+          <span class="sliger-stars">5/5 rating</span>
+          <p>SLIGER makes the choice feel simple. I liked seeing benefits, images, and the Amazon button without extra clutter.</p>
+          <h3>Aditi</h3>
+        </article>
+        <article class="sliger-card sliger-testimonial">
+          <span class="sliger-stars">5/5 rating</span>
+          <p>The layout feels premium and practical. I can compare the cleanser quickly and move straight to Amazon.</p>
+          <h3>Rohan</h3>
+        </article>
+        <article class="sliger-card sliger-testimonial">
+          <span class="sliger-stars">5/5 rating</span>
+          <p>The fragrance-free and sensitive skin notes are easy to scan, which helps when choosing skincare online.</p>
+          <h3>Meera</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="sliger-section">
+    <div class="sliger-shell sliger-grid-2">
+      <div>
+        <p class="sliger-eyebrow">FAQs</p>
+        <h2 class="sliger-title">Simple answers before you click.</h2>
+        <p class="sliger-copy">The goal is a clean affiliate experience: learn, compare, and purchase on Amazon.</p>
+      </div>
+
+      <div class="sliger-faq-list">
+        <details class="sliger-card sliger-faq">
+          <summary>Does SLIGER sell products directly?<span>+</span></summary>
+          <p>No. SLIGER is an affiliate website. We do not offer a cart, checkout, payment gateway, order tracking, or delivery service.</p>
+        </details>
+        <details class="sliger-card sliger-faq">
+          <summary>Where does the Buy Now button open?<span>+</span></summary>
+          <p>The Buy Now button opens your Amazon affiliate product link in a new browser tab.</p>
+        </details>
+        <details class="sliger-card sliger-faq">
+          <summary>Is Cetaphil Daily Facial Cleanser for men and women?<span>+</span></summary>
+          <p>Yes. The SLIGER skincare edit is built for both men and women looking for a clean daily face wash routine.</p>
+        </details>
+        <details class="sliger-card sliger-faq">
+          <summary>Is this medical advice?<span>+</span></summary>
+          <p>No. SLIGER shares affiliate product information and skincare shopping guidance. For medical skin concerns, consult a dermatologist.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sliger-section">
+    <div class="sliger-shell">
+      <div class="sliger-cta">
+        <p class="sliger-eyebrow" style="color: var(--sliger-glacier);">Ready for a cleaner routine?</p>
+        <h2>Start with the SLIGER featured cleanser.</h2>
+        <p>
+          Click through to Amazon, review the current price and delivery details,
+          and complete your purchase there.
+        </p>
+        <div class="sliger-hero__actions">
+          <a class="sliger-button" href="{{ cetaphil_link }}" target="_blank" rel="sponsored noopener noreferrer">Buy Cetaphil</a>
+          <a class="sliger-button-secondary" href="/pages/contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "SLIGER home",
+  "settings": [
+    {
+      "type": "url",
+      "id": "cetaphil_link",
+      "label": "Cetaphil buy link"
+    },
+    {
+      "type": "url",
+      "id": "simple_link",
+      "label": "Simple buy link"
+    },
+    {
+      "type": "url",
+      "id": "glad_link",
+      "label": "Glad2Glow buy link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SLIGER home"
+    }
+  ]
+}
+{% endschema %}

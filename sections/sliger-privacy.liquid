@@ -1,0 +1,94 @@
+{% liquid
+  assign buy_link = section.settings.buy_link
+  if buy_link == blank
+    assign buy_link = 'https://amzn.to/3PWsBtd'
+  endif
+%}
+
+<div class="sliger-page">
+  <section class="sliger-page-heading">
+    <div class="sliger-page-heading__media" aria-hidden="true">
+      <img src="{{ 'sliger-cetaphil-editorial.jpg' | asset_url }}" alt="" width="736" height="1333" loading="eager">
+    </div>
+    <div class="sliger-shell">
+      <p class="sliger-eyebrow">Privacy Policy</p>
+      <h1>Transparent affiliate skincare shopping.</h1>
+      <p>
+        This page explains how SLIGER handles affiliate links, analytics support,
+        and contact actions. Last updated: June 5, 2026.
+      </p>
+    </div>
+  </section>
+
+  <section class="sliger-section">
+    <div class="sliger-shell sliger-grid-2">
+      <aside class="sliger-card sliger-value">
+        <p class="sliger-eyebrow">Purchase notice</p>
+        <h2 class="sliger-title">Every active product button opens Amazon.</h2>
+        <p>
+          Review the current product page before buying. Final product details,
+          price, availability, payment, delivery, returns, and order support are handled by Amazon.
+        </p>
+        <div class="sliger-hero__actions">
+          <a class="sliger-button" href="{{ buy_link }}" target="_blank" rel="sponsored noopener noreferrer">Featured Amazon link</a>
+        </div>
+      </aside>
+
+      <div class="sliger-faq-list">
+        <article class="sliger-card sliger-value">
+          <h3>Affiliate disclosure</h3>
+          <p>
+            As an Amazon Associate, we earn from qualifying purchases. Some product buttons
+            on SLIGER are affiliate links, which means we may earn a commission when you purchase through those links.
+          </p>
+        </article>
+        <article class="sliger-card sliger-value">
+          <h3>Amazon-only purchases</h3>
+          <p>
+            SLIGER does not provide a cart, checkout, payment gateway, order processing,
+            delivery, returns, or customer order support.
+          </p>
+        </article>
+        <article class="sliger-card sliger-value">
+          <h3>Analytics support</h3>
+          <p>
+            The website can support analytics added through Shopify apps or theme settings.
+            Analytics may help measure page views, product clicks, and visitor behavior in aggregate.
+          </p>
+        </article>
+        <article class="sliger-card sliger-value">
+          <h3>Contact information</h3>
+          <p>
+            When you contact SLIGER through email, WhatsApp, or the Shopify contact form,
+            your message is handled through that selected channel.
+          </p>
+        </article>
+        <article class="sliger-card sliger-value">
+          <h3>Skincare information</h3>
+          <p>
+            Content on SLIGER is for shopping and informational purposes only. It is not medical advice.
+            For skin conditions, allergies, irritation, or treatment decisions, consult a qualified dermatologist.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "SLIGER privacy",
+  "settings": [
+    {
+      "type": "url",
+      "id": "buy_link",
+      "label": "Featured buy link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SLIGER privacy"
+    }
+  ]
+}
+{% endschema %}

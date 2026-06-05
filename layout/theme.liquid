@@ -27,8 +27,10 @@
 
     {%- render 'meta-tags' -%}
     {%- render 'stylesheets' -%}
+    {{ 'sliger.css' | asset_url | stylesheet_tag }}
     {%- render 'fonts' -%}
     {%- render 'scripts' -%}
+    <script src="{{ 'sliger.js' | asset_url }}" defer="defer"></script>
     {%- render 'theme-styles-variables' -%}
     {%- render 'color-schemes' -%}
 
